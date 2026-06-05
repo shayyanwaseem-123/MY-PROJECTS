@@ -1,0 +1,62 @@
+/* AURA Parallax Animation Styling */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  margin: 0;
+  scrollbar-width: none; /* Hide scrollbars */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Hide scrollbars */
+}
+
+/* Scroll Track (Increased height to 450vh for longer, smoother animation scrolling) */
+#scroll-track {
+  position: relative;
+  height: 450vh;
+}
+
+/* Canvas Container (Fixed behind the scrollable content) */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+#animation-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Cinematic Vignette Overlay */
+.canvas-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.95) 100%);
+}
+
+/* Content Wrapper (Slides UP and OVER the fixed canvas) */
+#content-wrapper {
+  position: relative;
+  z-index: 10;
+  background-color: #000000;
+  box-shadow: 0 -30px 50px rgba(0, 0, 0, 0.9);
+}
